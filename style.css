@@ -1,0 +1,61 @@
+body { margin: 0; overflow: hidden; background-color: #020202; color: #ece8e1; font-family: 'Impact', sans-serif; user-select: none; }
+
+#crosshair {
+    position: absolute; top: 50%; left: 50%; width: 4px; height: 4px;
+    background-color: #00ffff; transform: translate(-50%, -50%); z-index: 10; pointer-events: none;
+}
+.ch-line { position: absolute; background-color: #00ffff; transition: transform 0.1s; }
+#ch-top { width: 2px; height: 10px; left: 1px; top: -15px; }
+#ch-bottom { width: 2px; height: 10px; left: 1px; bottom: -15px; }
+#ch-left { width: 10px; height: 2px; left: -15px; top: 1px; }
+#ch-right { width: 10px; height: 2px; right: -15px; top: 1px; }
+
+#ads-dot {
+    display: none; position: absolute; top: 50%; left: 50%; width: 6px; height: 6px;
+    background-color: #ff0000; border-radius: 50%; transform: translate(-50%, -50%);
+    box-shadow: 0 0 10px #ff0000; z-index: 11; pointer-events: none;
+}
+
+/* ★ 追加：ミニマップのデザイン */
+#minimap {
+    position: absolute; top: 20px; right: 20px;
+    width: 200px; height: 200px;
+    background-color: rgba(10, 5, 5, 0.8);
+    border: 2px solid #8a0303;
+    border-radius: 8px;
+    z-index: 10;
+    box-shadow: 0 0 10px rgba(0,0,0,0.8), 0 0 14px rgba(138,3,3,0.5);
+}
+
+#ui { position: absolute; top: 20px; left: 30px; z-index: 10; pointer-events: none; text-shadow: 0 2px 4px rgba(0,0,0,1); }
+.stat-label { font-size: 18px; color: #ece8e1; letter-spacing: 2px; }
+.stat-value { font-size: 40px; color: #8a0303; margin-bottom: 5px; }
+#weapon-name { font-size: 24px; color: #00ffff; margin-top: 10px; }
+
+/* ★ ミニマップに被らないように top: 240px に変更 */
+#wave-ui { position: absolute; top: 240px; right: 20px; text-align: right; z-index: 10; text-shadow: 0 2px 4px #000; }
+.wave-text { font-size: 40px; color: #ffaa00; }
+.grenade-text { font-size: 24px; color: #4CAF50; margin-top: 10px; }
+
+#shard-ui { position: absolute; top: 20px; left: 50%; transform: translateX(-50%); text-align: center; z-index: 10; text-shadow: 0 2px 5px #000; }
+.shard-text { font-size: 60px; color: #ff0000; text-shadow: 0 0 15px #ff0000; }
+
+#hp-container {
+    position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%);
+    width: 400px; height: 20px; background-color: rgba(0,0,0,0.8); border: 2px solid #333; z-index: 10;
+}
+#hp-bar { width: 100%; height: 100%; background-color: #00ff00; transition: width 0.2s, background-color 0.2s; }
+
+#damage-flash {
+    position: absolute; top: 0; left: 0; width: 100vw; height: 100vh;
+    background-color: rgba(138, 3, 3, 0.7); opacity: 0; pointer-events: none; z-index: 5; transition: opacity 0.1s;
+}
+
+#blocker {
+    position: absolute; top: 0; left: 0; width: 100vw; height: 100vh;
+    background-color: rgba(2, 2, 2, 0.95); display: flex; flex-direction: column; justify-content: center; align-items: center; z-index: 20;
+}
+#instructions { text-align: center; cursor: pointer; }
+h1 { font-size: 70px; margin: 0 0 10px 0; letter-spacing: 5px; color: #ece8e1; }
+h1 span { color: #8a0303; text-shadow: 0 0 20px #ff0000; }
+.key-hint { color: #ffaa00; font-weight: bold; }

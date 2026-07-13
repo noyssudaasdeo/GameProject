@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D FPS: DARK DECEPTION STYLE</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/PointerLockControls.js"></script>
+</head>
+<body>
+
+    <div id="crosshair">
+        <div class="ch-line" id="ch-top"></div><div class="ch-line" id="ch-bottom"></div>
+        <div class="ch-line" id="ch-left"></div><div class="ch-line" id="ch-right"></div>
+    </div>
+    <div id="ads-dot"></div><div id="damage-flash"></div>
+
+    <!-- ★ 追加：レーダー（ミニマップ） -->
+    <canvas id="minimap" width="200" height="200"></canvas>
+
+    <div id="ui">
+        <div class="stat-label">BODY COUNT</div>
+        <div class="stat-value" id="score-display">0</div>
+        <div id="weapon-name">ASSAULT RIFLE</div>
+    </div>
+    
+    <div id="wave-ui">
+        <div class="stat-label">CURRENT WAVE</div>
+        <div class="wave-text" id="wave-display">WAVE 1</div>
+        <div class="grenade-text" id="grenade-display">GRENADES [G]: 3</div>
+    </div>
+
+    <div id="shard-ui">
+        <div class="stat-label">BLOOD CRYSTALS</div>
+        <div class="shard-text" id="shard-display">0 / 10</div>
+    </div>
+
+    <div id="hp-container"><div id="hp-bar"></div></div>
+
+    <div id="blocker">
+        <div id="instructions">
+            <h1>BLOOD <span>HARVEST</span></h1>
+            <p>クリックして探索開始</p>
+            <div style="text-align: left; margin-top: 20px; display: inline-block; background: rgba(20,0,0,0.8); padding: 20px; border-radius: 8px; border: 1px solid #8a0303;">
+                <p style="margin:5px 0; color:#ffaa00; font-weight:bold;">【目的】マップ内に散らばるクリスタルをすべて集めろ</p>
+                <p style="margin:5px 0;">[W,A,S,D] 移動 / [Space] ジャンプ</p>
+                <p style="margin:5px 0;">[Shift] しゃがむ / (走りながらShiftでスライディング)</p>
+                <p style="margin:5px 0;">[G] グレネード投擲 / [1, 2, 3] 武器チェンジ</p>
+                <p style="margin:5px 0;">[左クリック] 射撃 / [右クリック] ADS（照準）</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
